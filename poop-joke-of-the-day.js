@@ -1,22 +1,17 @@
-async function getJoke() {
-  const response = await fetch('https://api.openai.com/v1/engines/text-davinci-002/jobs', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer <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>'
-    },
-    body: JSON.stringify({
-      prompt: 'Generate a poop joke.',
-      max_tokens: 100,
-      n: 1,
-      stop: '\n',
-      temperature: 0.5
-    })
+var jokes = [];
+
+// read the jokes from the file and store them in an array
+fetch('poop_jokes.txt')
+  .then(response => response.text())
+  .then(text => {
+    jokes = text.split('\n');
   });
-  const data = await response.json();
-  const joke = data.choices[0].text;
-  document.getElementById("joke").innerHTML = joke;
+
+// function to randomly select a joke and display it
+function displayJoke() {
+  var jokeIndex = Math.floor(Math.random() * jokes.length);
+  document.getElementById('joke').innerHTML = jokes[jokeIndex];
 }
 
-getJoke();
-setInterval(getJoke, 24 * 60 * 60 * 1000);
+// call the displayJoke function every 24 hours
+setInterval(displayJoke, 24 * 60 * 60 * 1000);
