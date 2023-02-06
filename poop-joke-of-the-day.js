@@ -3,7 +3,7 @@ async function getJoke() {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer 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'
+      'Authorization': 'Bearer <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>'
     },
     body: JSON.stringify({
       prompt: 'Generate a poop joke.',
