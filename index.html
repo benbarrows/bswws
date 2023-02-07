@@ -16,11 +16,18 @@
         h1 {
           font-size: 36px;
           text-align: center;
+          position: relative;
+          top: 25%;
         }
   
         #joke-text {
           font-size: 24px;
           margin-bottom: 20px;
+        }
+
+        #joke-answer {
+          font-size: 30px;
+          text-align: center;
         }
 
         button {
@@ -37,7 +44,8 @@
   <body>
     <h1>Poop Joke of the Day</h1>
     <p id="joke-text"></p>
-    <button id="joke-btn" style="display: none;">Click Me</button>
+    <p id="joke-answer" style="display: none;"></p>
+    <button id="joke-btn">Click Me</button>
 
     <script>
       const jokes = {
@@ -62,19 +70,24 @@
       const jokeQuestion = Object.keys(jokes)[jokeIndex];
       const jokeAnswer = jokes[jokeQuestion];
 
-      const jokeEl = document.getElementById("joke-text");
+      const jokeEl = document.getElementById("joke");
       jokeEl.innerHTML = jokeQuestion;
 
       const btn = document.createElement("BUTTON");
       btn.innerHTML = "Click Me";
       btn.addEventListener("click", function() {
-        jokeEl.innerHTML = `${jokeQuestion}<br>${jokeAnswer}`;
+        jokeEl.innerHTML = `
+          <div style="text-align: center; font-size: 24px;">
+            ${jokeQuestion}<br>
+            <div style="text-align: center; font-size: 36px; margin-top: 20px;">
+              ${jokeAnswer}
+            </div>
+          </div>
+        `;
       });
       jokeEl.appendChild(btn);
     }
-  
     displayJoke();
-
     </script>
   </body>
 </html>
