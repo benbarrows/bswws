@@ -40,41 +40,41 @@
     <button id=""joke-btn" style="display: none;">Click Me</button>
 
     <script>
-      const jokes = [
+      const jokes = {
         // Put the list of jokes here, each in quotes and separated by a comma
-        "Q: What did the poop say to his kid?\nA: Stop being a little turd.",
-        "Q: What did the poo say when it was proved wrong?\nA: You have a good 'poo'int!",
-        "Q: What did the poo say to the other poo?\nA: You're the shit!",
-        "Q: What did the poop say when it arrived at work?\nA: Crap, I'm late!",
-        "Q: What did the poo say when it went skydiving?\nA: I'm dropping in!",
-        "Q: What did the poo say when it crossed the road?\nA: I'm a little turd, I'm a little turd!",
-        "Q: What did the poop say when it was born?\nA: I hope this is a normal delivery",
-        "Q: Why did the turd never go to college?\nA: Because it was a piece of shit.",
-        "Q: What did the poop say when it jumped into the pool?\nA: I'm a little turd, but I'm making a big splash!",
-        "Q: What did the poo say to the toilet?\nA: You look flushed!",
-        "Q: What did the poop say when it hit the fan?\nA: Oh crud!",
-        "Q: What did the poop say when it was asked why it's so chill?\nA: I just go with the flow."
-      ];
+        "Q: What did the poop say to his kid?": "A: Stop being a little turd.",
+        "Q: What did the poo say when it was proved wrong?": "A: You have a good 'poo'int!",
+        "Q: What did the poo say to the other poo?": "A: You're the shit!",
+        "Q: What did the poop say when it arrived at work?": "A: Crap, I'm late!",
+        "Q: What did the poo say when it went skydiving?": "A: I'm dropping in!",
+        "Q: What did the poo say when it crossed the road?": "A: I'm a little turd, I'm a little turd!",
+        "Q: What did the poop say when it was born?": "A: I hope this is a normal delivery",
+        "Q: Why did the turd never go to college?": "A: Because it was a piece of shit.",
+        "Q: What did the poop say when it jumped into the pool?": "A: I'm a little turd, but I'm making a big splash!",
+        "Q: What did the poo say to the toilet?": "A: You look flushed!",
+        "Q: What did the poop say when it hit the fan?": "A: Oh crud!",
+        "Q: What did the poop say when it was asked why it's so chill?": "A: I just go with the flow."
+      };
 
-      function displayJoke() {
-        var jokeIndex = Math.floor(Math.random() * jokes.length);
-        var joke = jokes[jokeIndex];
-        var jokeSplit = joke.split("\n");
-        var question = jokeSplit[0];
-        var answer = jokeSplit[1];
+    function displayJoke() {
+      // Generate a random index for the joke to display
+      const jokeIndex = Math.floor(Math.random() * Object.keys(jokes).length);
+      const jokeQuestion = Object.keys(jokes)[jokeIndex];
+      const jokeAnswer = jokes[jokeQuestion];
 
-        var jokeEl = document.getElementById('joke');
-        jokeEl.innerHTML = question;
+      const jokeEl = document.getElementById("joke");
+      jokeEl.innerHTML = jokeQuestion;
 
-        var btn = document.createElement("BUTTON");
-        btn.innerHTML = "Click Me";
-        btn.addEventListener("click", function() {
-          jokeEl.innerHTML = joke;
-        });
-        jokeEl.appendChild(btn);
-      }
+      const btn = document.createElement("BUTTON");
+      btn.innerHTML = "Click Me";
+      btn.addEventListener("click", function() {
+        jokeEl.innerHTML = `${jokeQuestion}<br>${jokeAnswer}`;
+      });
+      jokeEl.appendChild(btn);
+    }
+  
+    displayJoke();
 
-      displayJoke();
     </script>
   </body>
 </html>
