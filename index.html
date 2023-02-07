@@ -22,37 +22,43 @@
           transform: translate(-50%, -50%);
         }
 
-        #joke-question {
-            font-size: 24px;
-            cursor: pointer;
+        #joke-header {
+            postion: relative;
+            top: 25%;
         }
   
-        #joke-answer {
-          font-size: 20px;
-          display: none;
+        #joke-text {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+
+        button {
+          background-color: white;
+          color: black;
+          border: 1px solid black;
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 18px;
+          cursor: pointer;
         }
       </style>
   </head>
   <body>
     <h1 id="joke-header">Poop Joke of the Day</h1>
-    <div id="joke">
-      <p id="joke-question"></p>
-      <p id="joke-answer"></p>
-    </div>
+    <p id="joke-text"></p>
+    <button id=""joke-btn" style="display: none;">Click Me</button>
 
     <script>
       const jokes = [
         // Put the list of jokes here, each in quotes and separated by a comma
-        "Q: What did the poop remark about his commute?\nA: It was a little backed up.",
         "Q: What did the poop say to his kid?\nA: Stop being a little turd.",
         "Q: What did the poo say when it was proved wrong?\nA: You have a good 'poo'int!",
-        "Q: What did the poo say to the other poo?\nA: You're the shit, man!",
+        "Q: What did the poo say to the other poo?\nA: You're the shit!",
         "Q: What did the poop say when it arrived at work?\nA: Crap, I'm late!",
         "Q: What did the poo say when it went skydiving?\nA: I'm dropping in!",
-        "Q: What did the poop say to the Army Lieutenant?\nA: Reporting for doodee!",
         "Q: What did the poo say when it crossed the road?\nA: I'm a little turd, I'm a little turd!",
         "Q: What did the poop say when it was born?\nA: I hope this is a normal delivery",
-        "Q: Why did the turd never go to college?\nA: Because it already had a doo-ploma.",
+        "Q: Why did the turd never go to college?\nA: Because it was a piece of shit.",
         "Q: What did the poop say when it jumped into the pool?\nA: I'm a little turd, but I'm making a big splash!",
         "Q: What did the poo say to the toilet?\nA: You look flushed!",
         "Q: What did the poop say when it hit the fan?\nA: Oh crud!",
@@ -61,9 +67,19 @@
 
       function displayJoke() {
         var jokeIndex = Math.floor(Math.random() * jokes.length);
-        document.getElementById('joke').innerHTML = jokes[jokeIndex].replace(/\n/g, '<br>');
-        document.getElementById("joke").style.display = "block";
+        let joke = jokes[jokeIndex].split('A:');
+        let question = joke[0];
+        let answer = joke[1];
+
+        document.getElementById('joke').innerHTML = question;
+        let button = document.createElement('button');
+        button.innerHTML = 'Click Me';
+        button.addEventListener('click', function() {
+            document.getElementById('joke').innerHTML = question + answer;
+        });
+        document.getElementById('joke').appendChild(button);
       }
+
       displayJoke();
     </script>
   </body>
