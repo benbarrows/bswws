@@ -37,7 +37,7 @@
   <body>
     <h1>Poop Joke of the Day</h1>
     <p id="joke-text"></p>
-    <button id=""joke-btn" style="display: none;">Click Me</button>
+    <button id="joke-btn" style="display: none;">Click Me</button>
 
     <script>
       const jokes = {
@@ -62,7 +62,7 @@
       const jokeQuestion = Object.keys(jokes)[jokeIndex];
       const jokeAnswer = jokes[jokeQuestion];
 
-      const jokeEl = document.getElementById("joke");
+      const jokeEl = document.getElementById("joke-text");
       jokeEl.innerHTML = jokeQuestion;
 
       const btn = document.createElement("BUTTON");
