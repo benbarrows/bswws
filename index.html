@@ -12,26 +12,35 @@
           background-color: red;
           color: white;
         }
-  
+        
         h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
+          font-size: 36px;
+          margin-bottom:20px;
+        }
+
+        #joke-question {
+            font-size: 24px;
+            cursor: pointer;
         }
   
-        #joke-text {
-          font-size: 24px;
+        #joke-answer {
+          font-size: 20px;
+          display: none;
         }
       </style>
   </head>
   <body>
     <h1 id="joke-header">Poop Joke of the Day</h1>
-    <p id="joke"></p>
+    <div id="joke">
+      <p id="joke-question"></p>
+      <p id="joke-answer"></p>
+    </div>
 
     <script>
       const jokes = [
         // Put the list of jokes here, each in quotes and separated by a comma
-        "Q: What did the poop say about how the traffic was this morning on his way to work?\nA: It was a little backed up!",
-        "Q: What did the poop dad say to his kid that was being ornery?\nA: Stop being a little turd.",
+        "Q: What did the poop remark about his commute?\nA: It was a little backed up.",
+        "Q: What did the poop say to his kid?\nA: Stop being a little turd.",
         "Q: What did the poo say when it was proved wrong?\nA: You have a good 'poo'int!",
         "Q: What did the poo say to the other poo?\nA: You're the shit, man!",
         "Q: What did the poop say when it arrived at work?\nA: Crap, I'm late!",
@@ -49,8 +58,8 @@
       function displayJoke() {
         var jokeIndex = Math.floor(Math.random() * jokes.length);
         document.getElementById('joke').innerHTML = jokes[jokeIndex].replace(/\n/g, '<br>');
+        document.getElementById("joke").style.display = "block";
       }
-
       displayJoke();
     </script>
   </body>
