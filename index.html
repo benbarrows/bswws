@@ -67,17 +67,20 @@
 
       function displayJoke() {
         var jokeIndex = Math.floor(Math.random() * jokes.length);
-        let joke = jokes[jokeIndex].split('A:');
-        let question = joke[0];
-        let answer = joke[1];
+        var joke = jokes[jokeIndex];
+        var jokeSplit = joke.split("\n");
+        var question = jokeSplit[0];
+        var answer = jokeSplit[1];
 
-        document.getElementById('joke').innerHTML = question;
-        let button = document.createElement('button');
-        button.innerHTML = 'Click Me';
-        button.addEventListener('click', function() {
-            document.getElementById('joke').innerHTML = question + answer;
+        var jokeEl = document.getElementById('joke');
+        jokeEl.innerHTML = question;
+
+        var btn = document.createElement("BUTTON");
+        btn.innerHTML = "Click Me";
+        btn.addEventListener("click", function() {
+          jokeEl.innerHTML = joke;
         });
-        document.getElementById('joke').appendChild(button);
+        jokeEl.appendChild(btn);
       }
 
       displayJoke();
