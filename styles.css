@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #8B0000;
+  background-image: linear-gradient(to right top, #8B0000, #9d1a1a, #ae3434, #c04e4e, #d16868);
+  color: white;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+#top-left-image {
+  width: 30%;
+  height: auto;
+}
+
+.social-icons {
+  margin-right: 20px;
+}
+
+.social-icon {
+  color: silver;
+  font-size: 48px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: white;
+}
+
+h1 {
+  font-size: 54px;
+  text-align: center;
+  margin: 20px 0;
+  text-decoration: underline;
+}
+
+.container {
+  text-align: center;
+}
+
+#joke-text {
+  font-size: 36px;
+  margin-bottom: 35px;
+  color: #d8d8d8;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 27px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+  button:hover {
+  background-color: #5C4033;
+  color: white;
+}
+
+  .images-section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+  .images-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 10px;
+}
+
+  @media screen and (min-width: 768px) {
+  .images-section img {
+  width: 70%;
+  }
+}
+
+  .content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
