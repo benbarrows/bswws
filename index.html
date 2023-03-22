@@ -16,16 +16,37 @@
         color: white;
       }
 
-      .logo-container {
+      .header {
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
         margin-bottom: 20px;
+      }
+
+      .logo-container {
+        display: flex;
+        justify-content: center;
       }
 
       #top-left-image {
         width: 20%;
         height: auto;
+      }
+
+      .social-icons {
+        margin-right: 20px;
+      }
+
+      .social-icon {
+        color: silver;
+        font-size: 48px;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+
+      .social-icon:hover {
+        color: white;
       }
 
       h1 {
@@ -83,29 +104,7 @@
           width: 70%;
         }
       }
-      .footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        padding: 20px 0;
-      }
 
-      .social-icons {
-        margin-bottom: 20px;
-      }
-
-      .social-icon {
-        color: black;
-        font-size: 48px;
-        margin: 0 10px;
-        text-decoration: none;
-      }
-
-      .social-icon:hover {
-        color: silver;
-      }
-      
       .content {
         display: flex;
         flex-direction: column;
@@ -113,32 +112,15 @@
         align-items: center;
         justify-content: center;
       }
-
-      .contact-info p {
-        margin: 5px;
-      }
     </style>
   </head>
   <body>
-    <div class="logo-container">
-      <a href="https://bswws.com/">
-        <img src="HI_RES_LOGO.jpg" alt="Buddy's Septic & Water Well Service" id="top-left-image">
-      </a>
-    </div>
-    <div class="content">
-      <h1>Poop Joke of the Day</h1>
-      <div class="container">
-        <p id="joke-text"></p>
-        <button id="joke-btn">Click Me</button>
+    <div class="header">
+      <div class="logo-container">
+        <a href="https://bswws.com/">
+          <img src="HI_RES_LOGO.jpg" alt="Buddy's Septic & Water Well Service" id="top-left-image">
+        </a>
       </div>
-      <div class="images-section">
-        <img src="IMG_2033.JPG" alt="Image 1">
-        <img src="IMG_1542.JPG" alt="Image 2">
-        <img src="IMG_3435.jpeg" alt="Image 3">
-        <img src="IMG_4948.JPG" alt="Image 4">
-      </div>
-    </div>
-    <div class="footer">
       <div class="social-icons">
         <a href="https://www.facebook.com/136288573071480" target="_blank" class="social-icon">
           <i class="fab fa-facebook-square"></i>
@@ -153,12 +135,20 @@
           <i class="fab fa-yelp"></i>
         </a>
       </div>
-      <div class="contact-info">
-        <p><strong>Buddy's Septic & Water Well Service</strong></p>
-        <p>4855 State Hwy 173 N, Bandera, TX 78003</p>
-        <p>(830) 796-3878</p>
       </div>
-    </div>
+      <div class="content">
+        <h1>Poop Joke of the Day</h1>
+        <div class="container">
+          <p id="joke-text"></p>
+          <button id="joke-btn">Click Me</button>
+        </div>
+        <div class="images-section">
+          <img src="IMG_2033.JPG" alt="Image 1">
+          <img src="IMG_1542.JPG" alt="Image 2">
+          <img src="IMG_3435.jpeg" alt="Image 3">
+          <img src="IMG_4948.JPG" alt="Image 4">
+        </div>
+      </div>
 
     <script>
       const jokes = {
