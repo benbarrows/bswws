@@ -3,80 +3,102 @@
   <head>
     <title>Poop Joke of the Day</title>
     <style>
-        body {
-          font-family: Arial, sans-serif;
-          display: flex;
-          flex-direction: column;
-          height: 100vh;
-          align-items: center;
-          justify-content: center;
-          background-color: #8B0000;
-          background-image: linear-gradient(to right top, #8B0000, #9d1a1a, #ae3434, #c04e4e, #d16868);
-          color: white;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background-color: #8B0000;
+        background-image: linear-gradient(to right top, #8B0000, #9d1a1a, #ae3434, #c04e4e, #d16868);
+        color: white;
+      }
 
-        #top-left-image {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 60%;
-          height: auto;
-          transform: translate(-50%, -50%);
-        }
+      .logo-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
 
-        h1 {
-          font-size: 54px;
-          text-align: center;
-          margin: 20px 0;
-        }
+      #top-left-image {
+        width: 60%;
+        height: auto;
+      }
 
-        .container {
-          text-align: center;
-        }
-  
-        #joke-text {
-          font-size: 36px;
-          margin-bottom: 35px;
-        }
+      h1 {
+        font-size: 54px;
+        text-align: center;
+        margin: 20px 0;
+      }
 
-        button {
-          background-color: white;
-          color: black;
-          border: 1px solid black;
-          padding: 10px 20px;
-          border-radius: 5px;
-          font-size: 27px;
-          cursor: pointer;
-          display: block;
-          margin: 0 auto;
-          transition: all 0.3s ease;
-        }
+      .container {
+        text-align: center;
+      }
 
-        button:hover {
-          background-color: black;
-          color: white;
-        }
+      #joke-text {
+        font-size: 36px;
+        margin-bottom: 35px;
+      }
 
-        .images-section {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin-top: 50px;
-        }
+      button {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 27px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        transition: all 0.3s ease;
+      }
 
-        .images-section img {
-          margin: 10px;
-          width: 100px;
-          height: auto;
-          object-fit: cover;
-        }
-      </style>
+      button:hover {
+        background-color: black;
+        color: white;
+      }
+
+      .images-section {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      .images-section img:first-child {
+        flex-basis: 40%;
+        width: 40%;
+        height: auto;
+        object-fit: cover;
+        margin: 10px;
+      }
+
+      .images-section img:nth-child(2) {
+        flex-basis: 60%;
+        width: 60%;
+        height: auto;
+        object-fit: cover;
+        margin: 10px;
+      }
+
+      .images-section img {
+        flex-basis: calc(50% - 20px);
+        width: calc(50% - 20px);
+        height: auto;
+        object-fit: cover;
+        margin: 10px;
+      }
+    </style>
   </head>
   <body>
-    <a href="https://bswws.com/">
-      <img src="LOGO.PNG" alt="Buddy's Septic & Water Well Service" id="top-left-image">
-    </a>
+    <div class="logo-container">
+      <a href="https://bswws.com/">
+        <img src="LOGO.PNG" alt="Buddy's Septic & Water Well Service" id="top-left-image">
+      </a>
+      </div>
     <h1>Poop Joke of the Day</h1>
     <div class="container">
       <p id="joke-text"></p>
