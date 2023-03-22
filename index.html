@@ -7,7 +7,7 @@
         font-family: Arial, sans-serif;
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        min-height: 100vh;
         align-items: center;
         justify-content: center;
         background-color: #8B0000;
@@ -69,11 +69,16 @@
       }
 
       .images-section img {
-        flex-basis: calc(50% - 20px);
-        width: calc(50% - 20px);
+        width: 100%;
         height: auto;
         object-fit: cover;
         margin: 10px;
+      }
+      
+      @media screen and (min-width: 768px) {
+        .images-section img {
+          width: 70%;
+        }
       }
     </style>
   </head>
