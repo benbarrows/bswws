@@ -93,9 +93,24 @@ button {
   margin: 10px;
 }
 
+ .side-by-side-images {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+ .side-by-side-images img {
+  width: 50%;
+  margin: 10px;
+}
+
   @media screen and (min-width: 768px) {
   .images-section img {
   width: 70%;
+  }
+    
+  .side-by-side-images img {
+    width: calc(50% - 20px); /* Adjust the width for side-by-side images on larger screens */
   }
 }
 
