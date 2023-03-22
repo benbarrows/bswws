@@ -110,7 +110,7 @@ button {
   }
     
   .side-by-side-images img {
-    width: calc(50% - 20px); /* Adjust the width for side-by-side images on larger screens */
+    width: calc(25% - 20px); /* Adjust the width for side-by-side images on larger screens */
   }
 }
 
