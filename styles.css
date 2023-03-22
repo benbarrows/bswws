@@ -121,3 +121,16 @@ button {
   align-items: center;
   justify-content: center;
 }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 5px 0;
+}
