@@ -208,13 +208,23 @@ footer p {
     padding: 10px 25px;
   }
   
+  .content {
+    padding: 15px;
+    width: 95%;
+  }
+  
   .joke-container {
-    padding: 20px;
+    padding: 20px 15px;
+    width: calc(100% - 30px);
+    margin-bottom: 80px;
   }
   
   .outhouse-animation {
-    top: -65px;
-    right: -20px;
+    position: absolute;
+    top: auto;
+    bottom: -85px;
+    right: 50%;
+    transform: translateX(50%);
   }
   
   #outhouse-gif {
