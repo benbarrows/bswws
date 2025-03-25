@@ -75,6 +75,37 @@ body {
   width: 100%;
   margin-top: 30px;
   border: 2px solid #3b82f6;
+  position: relative;
+  overflow: visible;
+}
+
+.outhouse-animation {
+  position: absolute;
+  top: -40px;
+  right: 30px;
+  transform-origin: bottom center;
+  z-index: 10;
+}
+
+#outhouse-gif {
+  width: 80px;
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.outhouse-animation:hover {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+.outhouse-animation.wiggle-animation {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-5deg); }
+  50% { transform: rotate(0); }
+  75% { transform: rotate(5deg); }
 }
 
 h1 {
@@ -177,5 +208,14 @@ footer p {
   
   .joke-container {
     padding: 20px;
+  }
+  
+  .outhouse-animation {
+    top: -35px;
+    right: 10px;
+  }
+  
+  #outhouse-gif {
+    width: 60px;
   }
 }

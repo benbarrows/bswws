@@ -22,6 +22,23 @@ const jokes = {
   "If pooping is a call of nature.": "Then is farting a missed call?",
 };
 
+function animateOuthouse() {
+  const outhouse = document.querySelector('.outhouse-animation');
+  // Remove existing animation class if any
+  outhouse.classList.remove('wiggle-animation');
+  
+  // Trigger reflow to restart animation
+  void outhouse.offsetWidth;
+  
+  // Add animation class
+  outhouse.classList.add('wiggle-animation');
+  
+  // Remove class after animation completes
+  setTimeout(() => {
+    outhouse.classList.remove('wiggle-animation');
+  }, 500);
+}
+
 function displayJoke() {
   // Generate a random index for the joke to display
   const jokeIndex = Math.floor(Math.random() * Object.keys(jokes).length);
@@ -42,12 +59,30 @@ function displayJoke() {
   newBtn.addEventListener("click", function() {
     jokeEl.innerHTML = `${jokeQuestion}<br><br><strong>${jokeAnswer}</strong>`;
     this.textContent = "New Joke";
+    
+    // Animate the outhouse when showing the punchline
+    animateOuthouse();
+    
     this.removeEventListener("click", arguments.callee);
     this.addEventListener("click", function() {
       displayJoke();
+      
+      // Animate the outhouse when showing a new joke
+      animateOuthouse();
     });
   });
 }
 
 // Initialize the joke display when the page loads
-window.addEventListener("DOMContentLoaded", displayJoke);
+window.addEventListener("DOMContentLoaded", function() {
+  displayJoke();
+  
+  // Add click event to the outhouse
+  const outhouse = document.getElementById('outhouse-gif');
+  if (outhouse) {
+    outhouse.addEventListener('click', function() {
+      displayJoke();
+      animateOuthouse();
+    });
+  }
+});
